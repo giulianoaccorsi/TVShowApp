@@ -22,30 +22,48 @@ struct Result: Codable {
 
 // MARK: - Result
 struct TVShow: Codable {
-    let backdropPath: String?
-    let firstAirDate: String?
-    let genreIDS: [Int]?
     let id: Int?
     let name: String?
-    let originCountry: [String]?
-    let originalLanguage, originalName, overview: String?
-    let popularity: Double?
     let posterPath: String?
     let voteAverage: Double?
-    let voteCount: Int?
+    let backdropPath: String?
+    let firstAirDate: String?
 
     enum CodingKeys: String, CodingKey {
+        case id, name
+        case posterPath = "poster_path"
         case backdropPath = "backdrop_path"
         case firstAirDate = "first_air_date"
-        case genreIDS = "genre_ids"
-        case id, name
-        case originCountry = "origin_country"
-        case originalLanguage = "original_language"
-        case originalName = "original_name"
-        case overview, popularity
-        case posterPath = "poster_path"
         case voteAverage = "vote_average"
-        case voteCount = "vote_count"
+    }
+    
+    var posterURL: URL {
+        guard let urlString = posterPath else {
+            return URL(string: "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg")!
+        }
+        return URL(string: "https://image.tmdb.org/t/p/w500/\(urlString)")!
+    }
+    
+    var backdropURL: URL {
+        guard let urlString = backdropPath else {
+            return URL(string: "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg")!
+        }
+        return URL(string: "https://image.tmdb.org/t/p/w500/\(urlString)")!
+    }
+    
+    var voteAverageString: String {
+        guard let voteAverage = self.voteAverage else {
+            return "N/A"
+        }
+        return "\(voteAverage)"
+    }
+    
+    var date: String {
+        if let firstAirDate = self.firstAirDate {
+            return String(firstAirDate.prefix(4))
+        }
+        
+        return "N/A"
     }
 }
 

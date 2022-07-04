@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		191E03402872ACB100B1BAB1 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191E033F2872ACB100B1BAB1 /* Carousel.swift */; };
 		19612E4D28725B7500465C88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E4C28725B7500465C88 /* AppDelegate.swift */; };
 		19612E4F28725B7500465C88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E4E28725B7500465C88 /* SceneDelegate.swift */; };
 		19612E5128725B7500465C88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E5028725B7500465C88 /* ViewController.swift */; };
@@ -23,10 +24,13 @@
 		19612E7728725D3700465C88 /* TVShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E7128725D3700465C88 /* TVShowViewController.swift */; };
 		19612E7828725D3700465C88 /* TVShowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E7228725D3700465C88 /* TVShowInteractor.swift */; };
 		19612E7B28725D9200465C88 /* TVShowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E7A28725D9200465C88 /* TVShowFactory.swift */; };
+		19612E7E2872680600465C88 /* TVShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E7D2872680600465C88 /* TVShowCell.swift */; };
+		19612E8028726CDB00465C88 /* TVCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E7F28726CDB00465C88 /* TVCollectionDataSource.swift */; };
 		1DDE9EA13C3B1949C0CEE116 /* Pods_TVShowApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706A1A56CC8D673D108B67EA /* Pods_TVShowApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		191E033F2872ACB100B1BAB1 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		19612E4928725B7500465C88 /* TVShowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVShowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19612E4C28725B7500465C88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19612E4E28725B7500465C88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +49,8 @@
 		19612E7128725D3700465C88 /* TVShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowViewController.swift; sourceTree = "<group>"; };
 		19612E7228725D3700465C88 /* TVShowInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowInteractor.swift; sourceTree = "<group>"; };
 		19612E7A28725D9200465C88 /* TVShowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowFactory.swift; sourceTree = "<group>"; };
+		19612E7D2872680600465C88 /* TVShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowCell.swift; sourceTree = "<group>"; };
+		19612E7F28726CDB00465C88 /* TVCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCollectionDataSource.swift; sourceTree = "<group>"; };
 		706A1A56CC8D673D108B67EA /* Pods_TVShowApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVShowApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E2EB1D539A2FDD1D6EEDB4 /* Pods-TVShowApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVShowApp.release.xcconfig"; path = "Target Support Files/Pods-TVShowApp/Pods-TVShowApp.release.xcconfig"; sourceTree = "<group>"; };
 		D2EB5362CEC8AF24E8C25F0C /* Pods-TVShowApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVShowApp.debug.xcconfig"; path = "Target Support Files/Pods-TVShowApp/Pods-TVShowApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				19612E6228725C8B00465C88 /* ViewConfiguration.swift */,
+				191E033F2872ACB100B1BAB1 /* Carousel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -133,6 +140,7 @@
 		19612E6C28725D1500465C88 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				19612E7C287267FD00465C88 /* View */,
 				19612E7928725D8A00465C88 /* Factory */,
 				19612E6D28725D3700465C88 /* TVShowScenarios.swift */,
 				19612E6E28725D3700465C88 /* TVShowPresenter.swift */,
@@ -150,6 +158,15 @@
 				19612E7A28725D9200465C88 /* TVShowFactory.swift */,
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		19612E7C287267FD00465C88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				19612E7D2872680600465C88 /* TVShowCell.swift */,
+				19612E7F28726CDB00465C88 /* TVCollectionDataSource.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6A7B6A4DE467091C58A581D0 /* Pods */ = {
@@ -284,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19612E7828725D3700465C88 /* TVShowInteractor.swift in Sources */,
+				191E03402872ACB100B1BAB1 /* Carousel.swift in Sources */,
 				19612E7528725D3700465C88 /* TVShowWorker.swift in Sources */,
 				19612E5128725B7500465C88 /* ViewController.swift in Sources */,
 				19612E6528725CA200465C88 /* TVShowProvider.swift in Sources */,
@@ -294,9 +312,11 @@
 				19612E6B28725CF400465C88 /* TVShow.swift in Sources */,
 				19612E6828725CCF00465C88 /* TVShowTarget.swift in Sources */,
 				19612E7628725D3700465C88 /* TVShowRouter.swift in Sources */,
+				19612E8028726CDB00465C88 /* TVCollectionDataSource.swift in Sources */,
 				19612E7428725D3700465C88 /* TVShowPresenter.swift in Sources */,
 				19612E7728725D3700465C88 /* TVShowViewController.swift in Sources */,
 				19612E7B28725D9200465C88 /* TVShowFactory.swift in Sources */,
+				19612E7E2872680600465C88 /* TVShowCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
