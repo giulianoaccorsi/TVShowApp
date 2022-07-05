@@ -19,6 +19,21 @@ enum TVShowScenarios {
         }
     }
     
+    enum Change {
+        struct Request {
+            var tvShow: TVShow
+        }
+        struct Response {
+            var tvShow: TVShow
+        }
+        struct ViewModel {
+            var year: String
+            var voteAverage: String
+            var backgroundImage: URL
+            var name: String
+        }
+    }
+    
     enum Error {
         struct Request {}
         struct Response {

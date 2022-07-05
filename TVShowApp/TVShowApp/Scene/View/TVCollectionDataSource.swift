@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TVCollectionDataSourceDelegate: AnyObject {
-    func didChangeIndex(index: Int)
+    func didChangeIndex(index: Int, tvShow: TVShow)
 }
 
 final class TVCollectionDataSource: NSObject {
@@ -16,7 +16,7 @@ final class TVCollectionDataSource: NSObject {
     private weak var collectionView: UICollectionView?
     private let delegate: TVCollectionDataSourceDelegate
     private var shows: [TVShow] = []
-    private var selectedIndex: Int?
+    private var selectedIndex: Int = 0
     
     init(collectionView: UICollectionView, delegate: TVCollectionDataSourceDelegate) {
         self.delegate = delegate
@@ -41,11 +41,14 @@ final class TVCollectionDataSource: NSObject {
     }
     
     func changeItemSelected(index: Int) {
-        isSelected(index: index)
-        if let selectedIndex = selectedIndex {
-            isNOTSelected(index: selectedIndex)
+        if selectedIndex == index {
+            return
         }
-        self.selectedIndex = index
+        isNOTSelected(index: selectedIndex)
+        if index != selectedIndex {
+            isSelected(index: index)
+            self.selectedIndex = index
+        }
     }
     
     func isSelected(index: Int) {
@@ -78,7 +81,7 @@ extension TVCollectionDataSource: UICollectionViewDelegate {
         let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
         guard let itemCollection = self.collectionView?.indexPathForItem(at: visiblePoint) else { return }
         let index = itemCollection.item
-        self.delegate.didChangeIndex(index: index)
+        self.delegate.didChangeIndex(index: index, tvShow: shows[index])
     }
 }
 
@@ -90,7 +93,7 @@ extension TVCollectionDataSource: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell: TVShowCell = collectionView.dequeueReusableCell(withReuseIdentifier: TVShowCell.identifier, for: indexPath) as? TVShowCell else {return UICollectionViewCell()}
-        
+                
         let show = shows[indexPath.item]
         cell.setupCell(nameShow: show.name ?? "", urlPoster: show.posterURL)
         return cell

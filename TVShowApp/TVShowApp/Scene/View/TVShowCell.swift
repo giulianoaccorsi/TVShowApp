@@ -31,7 +31,7 @@ class TVShowCell: UICollectionViewCell {
     let blackView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.85)
+        view.backgroundColor = UIColor.clear
         return view
     }()
     
@@ -51,8 +51,11 @@ class TVShowCell: UICollectionViewCell {
     }
     
     func isSelectedCell() {
-        nameLabel.isHidden = false
-        blackView.isHidden = false
+        UIView.transition(with: nameLabel, duration: 0.8,
+                          options: .transitionCrossDissolve,
+                          animations: {
+            self.nameLabel.isHidden = false
+        })
     }
     
     func isNotSelectedCell() {
@@ -61,25 +64,26 @@ class TVShowCell: UICollectionViewCell {
                           animations: {
             self.nameLabel.isHidden = true
         })
-        UIView.transition(with: blackView, duration: 0.4,
-                          options: .transitionCrossDissolve,
-                          animations: {
-            self.blackView.isHidden = true
-        })
     }
 }
 extension TVShowCell: ViewConfiguration {
     func buildViewHierarchy() {
         contentView.addSubview(viewBackground)
         viewBackground.addSubview(posterImageView)
-        viewBackground.addSubview(blackView)
-        viewBackground.addSubview(nameLabel)
+        contentView.addSubview(blackView)
+        blackView.addSubview(nameLabel)
     }
     
     func setUpConstraints() {
         NSLayoutConstraint.activate([
-            viewBackground.topAnchor.constraint(equalTo: contentView.topAnchor),
-            viewBackground.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            
+            blackView.heightAnchor.constraint(equalToConstant: 50),
+            blackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            blackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            blackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            
+            viewBackground.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -8),
+            viewBackground.bottomAnchor.constraint(equalTo: blackView.topAnchor, constant: -8),
             viewBackground.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             viewBackground.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
@@ -87,11 +91,6 @@ extension TVShowCell: ViewConfiguration {
             posterImageView.bottomAnchor.constraint(equalTo: viewBackground.bottomAnchor),
             posterImageView.leadingAnchor.constraint(equalTo: viewBackground.leadingAnchor),
             posterImageView.trailingAnchor.constraint(equalTo: viewBackground.trailingAnchor),
-            
-            blackView.heightAnchor.constraint(equalToConstant: 60),
-            blackView.bottomAnchor.constraint(equalTo: viewBackground.bottomAnchor),
-            blackView.leadingAnchor.constraint(equalTo: viewBackground.leadingAnchor),
-            blackView.trailingAnchor.constraint(equalTo: viewBackground.trailingAnchor),
             
             nameLabel.topAnchor.constraint(equalTo: blackView.topAnchor),
             nameLabel.bottomAnchor.constraint(equalTo: blackView.bottomAnchor),
@@ -103,7 +102,6 @@ extension TVShowCell: ViewConfiguration {
     
     func setUpAdditionalConfiguration() {
         nameLabel.isHidden = true
-        blackView.isHidden = true
     }
     
     

@@ -11,6 +11,7 @@ import UIKit
 
 protocol TVShowInteractorProtocol {
     func fetchTVShows(request: TVShowScenarios.Fetch.Request)
+    func changedItem(request: TVShowScenarios.Change.Request)
 }
 
 protocol TVShowDataStore {
@@ -18,7 +19,7 @@ protocol TVShowDataStore {
 }
 
 class TVShowInteractor: TVShowInteractorProtocol, TVShowDataStore {
-    
+        
     var resultShows: Result?
     var presenter: TVShowPresenterProtocol?
     var worker: TVShowWorker = TVShowWorker()
@@ -36,5 +37,10 @@ class TVShowInteractor: TVShowInteractorProtocol, TVShowDataStore {
                 let response = TVShowScenarios.Error.Response(error: errorResult.localizedDescription)
                 self.presenter?.presentError(response: response)
             }
+    }
+    
+    func changedItem(request: TVShowScenarios.Change.Request) {
+        let response = TVShowScenarios.Change.Response(tvShow: request.tvShow)
+        self.presenter?.presentChangedTVShow(response: response)
     }
 }
