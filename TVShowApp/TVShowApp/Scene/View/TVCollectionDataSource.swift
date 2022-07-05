@@ -9,6 +9,7 @@ import UIKit
 
 protocol TVCollectionDataSourceDelegate: AnyObject {
     func didChangeIndex(index: Int, tvShow: TVShow)
+    func loadMore()
 }
 
 final class TVCollectionDataSource: NSObject {
@@ -82,6 +83,9 @@ extension TVCollectionDataSource: UICollectionViewDelegate {
         guard let itemCollection = self.collectionView?.indexPathForItem(at: visiblePoint) else { return }
         let index = itemCollection.item
         self.delegate.didChangeIndex(index: index, tvShow: shows[index])
+        if index == shows.count - 1 {
+            self.delegate.loadMore()
+        }
     }
 }
 

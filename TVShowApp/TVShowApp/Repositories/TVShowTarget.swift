@@ -19,44 +19,35 @@ enum RequestConstant: String {
 // Each enum case is a different API request
 enum TVShowTarget {
     case loadTVShow
+    case fetchMore(page: String)
 }
 
 extension TVShowTarget: TargetType {
     
     var baseURL: URL {
-        switch self {
-        case .loadTVShow:
-            guard let url = URL(string: RequestConstant.baseURL.rawValue) else {fatalError()}
-            return url
-        }
+        guard let url = URL(string: RequestConstant.baseURL.rawValue) else {fatalError()}
+        return url
     }
     
     var parameters: [String: String] {
         switch self {
         case .loadTVShow:
             return ["api_key": RequestConstant.apiKey.rawValue]
+        case .fetchMore(page: let page):
+            return["api_key": RequestConstant.apiKey.rawValue, "page": page]
         }
     }
     
     var validationType: ValidationType {
-        switch self {
-        case .loadTVShow:
-            return .successCodes
-        }
+        return .successCodes
     }
     
     var path: String {
-        switch self {
-        case .loadTVShow:
-            return RequestConstant.tvShowPath.rawValue
-        }
+        return RequestConstant.tvShowPath.rawValue
     }
     
     var method: Moya.Method {
-        switch self {
-        case .loadTVShow:
-            return .get
-        }
+        return .get
     }
     
     var sampleData: Data {
@@ -66,6 +57,8 @@ extension TVShowTarget: TargetType {
     var task: Task {
         switch self {
         case .loadTVShow:
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+        case .fetchMore(page: _):
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         }
     }

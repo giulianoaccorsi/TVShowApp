@@ -23,14 +23,18 @@ class TVShowInteractor: TVShowInteractorProtocol, TVShowDataStore {
     var resultShows: Result?
     var presenter: TVShowPresenterProtocol?
     var worker: TVShowWorker = TVShowWorker()
+    var pageIndex: Int = 1
+    var tvShows: [TVShow] = []
     
     func fetchTVShows(request: TVShowScenarios.Fetch.Request) {
-        
-        worker.getTVShows()
+        let pageString = String(pageIndex)
+        worker.getTVShows(page: pageString)
             .done { result in
                 if let resultShows = result.results {
-                    let response = TVShowScenarios.Fetch.Response(showsList: resultShows)
+                    self.tvShows.append(contentsOf: resultShows)
+                    let response = TVShowScenarios.Fetch.Response(showsList: self.tvShows)
                     self.presenter?.presentTVShow(response: response)
+                    self.pageIndex += 1
                 }
             }
             .catch { errorResult in

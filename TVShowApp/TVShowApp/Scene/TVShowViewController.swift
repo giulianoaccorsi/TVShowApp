@@ -113,6 +113,10 @@ class TVShowViewController: UIViewController, TVShowViewControllerProtocol {
 }
 
 extension TVShowViewController: TVCollectionDataSourceDelegate {
+    func loadMore() {
+        fetchShows()
+    }
+    
     func didChangeIndex(index: Int, tvShow: TVShow) {
         dataSource.changeItemSelected(index: index)
         let request = TVShowScenarios.Change.Request(tvShow: tvShow)

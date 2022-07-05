@@ -17,7 +17,7 @@ class TVShowWorker {
         self.serviceProvider = serviceProvider
     }
     
-    func getTVShows(page: Int = 1) -> Promise<Result> {
-        return serviceProvider.request(target: .loadTVShow, parser: Result.self)
+    func getTVShows(page: String) -> Promise<Result> {
+        return serviceProvider.request(target: .fetchMore(page: page), parser: Result.self)
     }
 }
