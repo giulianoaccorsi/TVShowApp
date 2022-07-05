@@ -69,6 +69,15 @@ class TVShowViewController: UIViewController, TVShowViewControllerProtocol {
         return label
     }()
     
+    let titleView: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textAlignment = .center
+        return label
+    }()
+    
     var interactor: TVShowInteractorProtocol?
     var router: (TVShowRouterProtocol & TVShowDataPassing)?
     private lazy var dataSource = TVCollectionDataSource(collectionView: self.collectionView, delegate: self)
@@ -117,6 +126,7 @@ extension TVShowViewController: ViewConfiguration {
         view.addSubview(collectionView)
         view.addSubview(stackView)
         view.addSubview(showLabel)
+        view.addSubview(titleView)
         
     }
     
@@ -143,10 +153,15 @@ extension TVShowViewController: ViewConfiguration {
             showLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -8),
             showLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 16),
             showLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -16),
+            
+            titleView.heightAnchor.constraint(equalToConstant: 50),
+            titleView.centerXAnchor.constraint(equalTo: showLabel.centerXAnchor),
+            titleView.bottomAnchor.constraint(equalTo: showLabel.topAnchor)
         ])
     }
     
     func setUpAdditionalConfiguration() {
         backgroundImageView.addBlackGradientLayerInBackground(frame: view.bounds, colors: [.clear, .black])
+        titleView.text = "Popular • Serie"
     }
 }
