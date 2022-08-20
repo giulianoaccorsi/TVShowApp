@@ -35,9 +35,9 @@ class TVShowProvider: TVShowProviderProtocol {
                 case .success(let response):
                     do {
                         let results = try JSONDecoder().decode(T.self, from: response.data)
-                        return seal.fulfill(results)
+                        seal.fulfill(results)
                     } catch {
-                        return seal.reject(TVShowError.decodeFailed)
+                        seal.reject(TVShowError.decodeFailed)
                     }
                 case .failure(let error):
                     seal.reject(TVShowError.failure(error.localizedDescription))

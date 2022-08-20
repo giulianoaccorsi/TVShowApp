@@ -10,9 +10,6 @@ import Moya
 
 enum RequestConstant: String {
     case baseURL = "https://api.themoviedb.org/3/"
-    case tvShowPath = "tv/top_rated"
-    case headerKey1 = "Content-Type"
-    case headerValue1 = "application/json"
     case apiKey = "e67ebe33d00c9960fe5c35b3e75a1b22"
 }
 
@@ -43,7 +40,7 @@ extension TVShowTarget: TargetType {
     }
     
     var path: String {
-        return RequestConstant.tvShowPath.rawValue
+        return "tv/top_rated"
     }
     
     var method: Moya.Method {
@@ -64,6 +61,6 @@ extension TVShowTarget: TargetType {
     }
     
     var headers: [String : String]? {
-        return [RequestConstant.headerKey1.rawValue: RequestConstant.headerValue1.rawValue]
+        return ["Content-Type": "application/json"]
     }
 }

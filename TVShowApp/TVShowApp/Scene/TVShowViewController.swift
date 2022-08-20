@@ -13,9 +13,9 @@ protocol TVShowViewControllerProtocol: AnyObject {
     func displayChangedTVShow(viewModel: TVShowScenarios.Change.ViewModel)
 }
 
-class TVShowViewController: UIViewController, TVShowViewControllerProtocol {
+final class TVShowViewController: UIViewController, TVShowViewControllerProtocol {
     
-    let collectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         let colletion = UICollectionView(frame: .zero , collectionViewLayout: UICollectionViewFlowLayout.init())
         colletion.backgroundColor = .clear
         let flowLayout = UPCarouselFlowLayout()
@@ -32,7 +32,7 @@ class TVShowViewController: UIViewController, TVShowViewControllerProtocol {
         return colletion
     }()
     
-    let backgroundImageView: UIImageView = {
+    private lazy var backgroundImageView: UIImageView = {
         let image = UIImageView(frame: .zero)
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleToFill
@@ -78,9 +78,19 @@ class TVShowViewController: UIViewController, TVShowViewControllerProtocol {
         return label
     }()
     
-    var interactor: TVShowInteractorProtocol?
-    var router: (TVShowRouterProtocol & TVShowDataPassing)?
+    let interactor: TVShowInteractorProtocol
+    let router: TVShowRouterProtocol
     private lazy var dataSource = TVCollectionDataSource(collectionView: self.collectionView, delegate: self)
+    
+    init(interactor: TVShowInteractor, router: TVShowRouterProtocol) {
+        self.interactor = interactor
+        self.router = router
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: View lifecycle
     
@@ -92,13 +102,13 @@ class TVShowViewController: UIViewController, TVShowViewControllerProtocol {
     
     func fetchShows() {
         let request = TVShowScenarios.Fetch.Request()
-        interactor?.fetchTVShows(request: request)
+        interactor.fetchTVShows(request: request)
     }
     
     func displayTVShows(viewModel: TVShowScenarios.Fetch.ViewModel) {
         dataSource.updateShows(tvShows: viewModel.showsList)
         let request = TVShowScenarios.Change.Request(tvShow: viewModel.showsList[0])
-        interactor?.changedItem(request: request)
+        interactor.changedItem(request: request)
     }
     
     func displayError(viewModel: TVShowScenarios.Error.ViewModel) {
@@ -120,7 +130,7 @@ extension TVShowViewController: TVCollectionDataSourceDelegate {
     func didChangeIndex(index: Int, tvShow: TVShow) {
         dataSource.changeItemSelected(index: index)
         let request = TVShowScenarios.Change.Request(tvShow: tvShow)
-        self.interactor?.changedItem(request: request)
+        self.interactor.changedItem(request: request)
     }
 }
 

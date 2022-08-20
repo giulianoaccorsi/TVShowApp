@@ -11,12 +11,7 @@ protocol TVShowRouterProtocol {
     func routeToSomewhere()
 }
 
-protocol TVShowDataPassing {
-    var dataStore: TVShowDataStore? {get}
-}
-
-class TVShowRouter: TVShowRouterProtocol, TVShowDataPassing {
-    var dataStore: TVShowDataStore?
+class TVShowRouter: TVShowRouterProtocol {
     
     func routeToSomewhere() {
     }

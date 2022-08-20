@@ -29,17 +29,18 @@ class TVShowInteractor: TVShowInteractorProtocol, TVShowDataStore {
     func fetchTVShows(request: TVShowScenarios.Fetch.Request) {
         let pageString = String(pageIndex)
         worker.getTVShows(page: pageString)
-            .done { result in
+            .done { [weak self] result in
                 if let resultShows = result.results {
+                    guard let self = self else { return }
                     self.tvShows.append(contentsOf: resultShows)
                     let response = TVShowScenarios.Fetch.Response(showsList: self.tvShows)
                     self.presenter?.presentTVShow(response: response)
                     self.pageIndex += 1
                 }
             }
-            .catch { errorResult in
+            .catch { [weak self] errorResult in
                 let response = TVShowScenarios.Error.Response(error: errorResult.localizedDescription)
-                self.presenter?.presentError(response: response)
+                self?.presenter?.presentError(response: response)
             }
     }
     
