@@ -7,8 +7,8 @@
 
 import UIKit
 
+// swiftlint:disable nesting
 enum TVShowScenarios {
-    
     enum Fetch {
         struct Request {}
         struct Response {
@@ -18,7 +18,6 @@ enum TVShowScenarios {
             var showsList: [TVShow]
         }
     }
-    
     enum Change {
         struct Request {
             var tvShow: TVShow
@@ -29,17 +28,15 @@ enum TVShowScenarios {
         struct ViewModel {
             var year: String
             var voteAverage: String
-            var backgroundImage: URL
+            var backgroundImage: URL?
             var name: String
         }
     }
-    
     enum Error {
         struct Request {}
         struct Response {
             var error: String
         }
-        struct ViewModel {
-        }
+        struct ViewModel {}
     }
 }

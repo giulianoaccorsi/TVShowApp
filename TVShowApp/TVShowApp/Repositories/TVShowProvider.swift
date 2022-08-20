@@ -22,12 +22,10 @@ protocol TVShowProviderProtocol {
 }
 
 class TVShowProvider: TVShowProviderProtocol {
-    
     internal let provider: MoyaProvider<TVShowTarget>
-    init(provider: MoyaProvider<TVShowTarget>){
+    init(provider: MoyaProvider<TVShowTarget>) {
         self.provider = provider
     }
-    
     func request<T: Decodable>(target: TVShowTarget, parser: T.Type) -> Promise<T> {
         return Promise { seal in
             provider.request(target) { result in

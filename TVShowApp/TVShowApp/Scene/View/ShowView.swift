@@ -20,7 +20,6 @@ class ShowView: UIView {
         image.backgroundColor = .black
         return image
     }()
-    
     let showLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -29,12 +28,10 @@ class ShowView: UIView {
         label.textAlignment = .center
         return label
     }()
-    
     init() {
         super.init(frame: .zero)
         setUpView()
     }
-    
     func setupViewBackground(text: String, type: ShowViewType) {
         self.showLabel.text = text
         switch type {
@@ -46,7 +43,7 @@ class ShowView: UIView {
             showLabel.textColor = .black
         }
     }
-    
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -57,24 +54,18 @@ extension ShowView: ViewConfiguration {
         self.addSubview(viewBackground)
         viewBackground.addSubview(showLabel)
     }
-    
     func setUpConstraints() {
         NSLayoutConstraint.activate([
-            
             viewBackground.topAnchor.constraint(equalTo: self.topAnchor),
             viewBackground.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             viewBackground.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             viewBackground.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            
             showLabel.topAnchor.constraint(equalTo: viewBackground.topAnchor),
             showLabel.bottomAnchor.constraint(equalTo: viewBackground.bottomAnchor),
             showLabel.leadingAnchor.constraint(equalTo: viewBackground.leadingAnchor),
             showLabel.trailingAnchor.constraint(equalTo: viewBackground.trailingAnchor)
         ])
     }
-    
     func setUpAdditionalConfiguration() {
     }
-    
-    
 }

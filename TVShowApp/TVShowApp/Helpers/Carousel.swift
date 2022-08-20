@@ -6,6 +6,7 @@
 //
 
 import UIKit
+// swiftlint:disable all
 public enum UPCarouselFlowLayoutSpacingMode {
     case fixed(spacing: CGFloat)
     case overlap(visibleOffset: CGFloat)

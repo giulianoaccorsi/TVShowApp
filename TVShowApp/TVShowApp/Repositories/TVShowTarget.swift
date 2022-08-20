@@ -20,12 +20,10 @@ enum TVShowTarget {
 }
 
 extension TVShowTarget: TargetType {
-    
     var baseURL: URL {
-        guard let url = URL(string: RequestConstant.baseURL.rawValue) else {fatalError()}
+        guard let url = URL(string: RequestConstant.baseURL.rawValue) else {fatalError("Failed to load baseURL")}
         return url
     }
-    
     var parameters: [String: String] {
         switch self {
         case .loadTVShow:
@@ -34,23 +32,18 @@ extension TVShowTarget: TargetType {
             return["api_key": RequestConstant.apiKey.rawValue, "page": page]
         }
     }
-    
     var validationType: ValidationType {
         return .successCodes
     }
-    
     var path: String {
         return "tv/top_rated"
     }
-    
     var method: Moya.Method {
         return .get
     }
-    
     var sampleData: Data {
         return Data()
     }
-    
     var task: Task {
         switch self {
         case .loadTVShow:
@@ -59,8 +52,7 @@ extension TVShowTarget: TargetType {
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         }
     }
-    
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         return ["Content-Type": "application/json"]
     }
 }

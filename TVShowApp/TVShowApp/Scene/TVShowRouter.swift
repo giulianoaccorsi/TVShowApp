@@ -12,11 +12,7 @@ protocol TVShowRouterProtocol {
 }
 
 class TVShowRouter: TVShowRouterProtocol {
-    
     func routeToSomewhere() {
     }
-
     weak var viewController: TVShowViewController?
-    
 }
-

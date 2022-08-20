@@ -36,34 +36,30 @@ struct TVShow: Codable {
         case firstAirDate = "first_air_date"
         case voteAverage = "vote_average"
     }
-    
-    var posterURL: URL {
-        guard let urlString = posterPath else {
-            return URL(string: "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg")!
+    var posterURL: URL? {
+        if let urlString = posterPath,
+        let url = URL(string: "https://image.tmdb.org/t/p/w500/\(urlString)") {
+            return url
         }
-        return URL(string: "https://image.tmdb.org/t/p/w500/\(urlString)")!
+        return nil
     }
-    
-    var backdropURL: URL {
-        guard let urlString = backdropPath else {
-            return URL(string: "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg")!
+    var backdropURL: URL? {
+        if let urlString = backdropPath,
+        let url = URL(string: "https://image.tmdb.org/t/p/w500/\(urlString)") {
+            return url
         }
-        return URL(string: "https://image.tmdb.org/t/p/w500/\(urlString)")!
+        return nil
     }
-    
     var voteAverageString: String {
         guard let voteAverage = self.voteAverage else {
             return "N/A"
         }
         return "\(voteAverage)"
     }
-    
     var date: String {
         if let firstAirDate = self.firstAirDate {
             return String(firstAirDate.prefix(4))
         }
-        
         return "N/A"
     }
 }
-
