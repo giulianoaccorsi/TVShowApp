@@ -8,10 +8,10 @@ An app that show the most popular TVShow. Developed for study only, using Moya a
 
 
 
-## Libs 📚
+## CocoaPods 📚
 
  - [Moya](https://https://github.com/Moya/Moya)
- - [PromiseKit](https://github.com/mxcl/PromiseKit)
+ - [SwiftLint](https://github.com/realm/SwiftLint)
  - [Kingfisher](https://github.com/onevcat/Kingfisher)
 
 
