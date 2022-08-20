@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import PromiseKit
 import Moya
 
 class TVShowWorker {
@@ -15,7 +14,14 @@ class TVShowWorker {
     init(serviceProvider: TVShowProviderProtocol = TVShowProvider(provider: MoyaProvider<TVShowTarget>())) {
         self.serviceProvider = serviceProvider
     }
-    func getTVShows(page: String) -> Promise<Result> {
-        return serviceProvider.request(target: .fetchMore(page: page), parser: Result.self)
+    func getTVShows(page: String, completion: @escaping (Result<ResultAPI, TVShowError>) -> Void) {
+        serviceProvider.request(target: .fetchMore(page: page), parser: ResultAPI.self) { result in
+            switch result {
+            case .success(let resultAPI):
+                completion(.success(resultAPI))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 }

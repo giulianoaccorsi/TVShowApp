@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - TVShow
-struct Result: Codable {
+struct ResultAPI: Codable {
     let page: Int?
     let results: [TVShow]?
     let totalPages, totalResults: Int?

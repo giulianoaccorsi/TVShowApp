@@ -5,34 +5,22 @@ PODS:
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
-  - PromiseKit (6.17.1):
-    - PromiseKit/CorePromise (= 6.17.1)
-    - PromiseKit/Foundation (= 6.17.1)
-    - PromiseKit/UIKit (= 6.17.1)
-  - PromiseKit/CorePromise (6.17.1)
-  - PromiseKit/Foundation (6.17.1):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.17.1):
-    - PromiseKit/CorePromise
 
 DEPENDENCIES:
   - Kingfisher
   - Moya
-  - PromiseKit
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
     - Moya
-    - PromiseKit
 
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   Kingfisher: 2457be2121734e69e54a2312ecc0150eb9ae70b3
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
-  PromiseKit: ee485df3d4dc570594d7e7aecae6352697dc6a4c
 
-PODFILE CHECKSUM: 82be4d81018abea3a8e8dcb11be796d3f6a59f26
+PODFILE CHECKSUM: e1b79425b43faf00db4f53e6c2b748a8d7cef37d
 
 COCOAPODS: 1.11.3

@@ -7,7 +7,6 @@ target 'TVShowApp' do
 
   # Pods for TVShowApp
   pod 'Moya'
-  pod 'PromiseKit'
   pod 'Kingfisher'
 
 end

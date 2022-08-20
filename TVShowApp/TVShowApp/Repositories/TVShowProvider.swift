@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import PromiseKit
 import Moya
 
 enum TVShowError: Error {
@@ -18,7 +17,8 @@ enum TVShowError: Error {
 
 protocol TVShowProviderProtocol {
     var provider: MoyaProvider<TVShowTarget> {get}
-    func request<T: Decodable>(target: TVShowTarget, parser: T.Type) -> Promise<T>
+    func request<T: Decodable>(
+        target: TVShowTarget, parser: T.Type, completion: @escaping (Result<T, TVShowError>) -> Void)
 }
 
 class TVShowProvider: TVShowProviderProtocol {
@@ -26,20 +26,19 @@ class TVShowProvider: TVShowProviderProtocol {
     init(provider: MoyaProvider<TVShowTarget>) {
         self.provider = provider
     }
-    func request<T: Decodable>(target: TVShowTarget, parser: T.Type) -> Promise<T> {
-        return Promise { seal in
-            provider.request(target) { result in
-                switch result {
-                case .success(let response):
-                    do {
-                        let results = try JSONDecoder().decode(T.self, from: response.data)
-                        seal.fulfill(results)
-                    } catch {
-                        seal.reject(TVShowError.decodeFailed)
-                    }
-                case .failure(let error):
-                    seal.reject(TVShowError.failure(error.localizedDescription))
+    func request<T: Decodable>(
+        target: TVShowTarget, parser: T.Type, completion: @escaping (Result<T, TVShowError>) -> Void) {
+        provider.request(target) { result in
+            switch result {
+            case .success(let response):
+                do {
+                    let result = try JSONDecoder().decode(T.self, from: response.data)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(.decodeFailed))
                 }
+            case .failure(let error):
+                completion(.failure(.failure(error.localizedDescription)))
             }
         }
     }
