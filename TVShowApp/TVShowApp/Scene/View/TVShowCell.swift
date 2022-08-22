@@ -8,14 +8,14 @@
 import UIKit
 import Kingfisher
 
-class TVShowCell: UICollectionViewCell {
+final class TVShowCell: UICollectionViewCell {
     static let identifier: String = "TVShowCell"
-    let posterImageView: UIImageView = {
+    private let posterImageView: UIImageView = {
         let image = UIImageView(frame: .zero)
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
-    let nameLabel: UILabel = {
+    private let nameLabel: UILabel = {
         let title = UILabel(frame: .zero)
         title.translatesAutoresizingMaskIntoConstraints = false
         title.numberOfLines = 0
@@ -24,13 +24,13 @@ class TVShowCell: UICollectionViewCell {
         title.textColor = .white
         return title
     }()
-    let blackView: UIView = {
+    private let blackView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor.clear
         return view
     }()
-    let viewBackground: UIView = {
+    private let viewBackground: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor.black.withAlphaComponent(0.8)

@@ -21,22 +21,22 @@ enum TVShowTarget {
 
 extension TVShowTarget: TargetType {
     var baseURL: URL {
-        guard let url = URL(string: RequestConstant.baseURL.rawValue) else {fatalError("Failed to load baseURL")}
+        guard let url = URL(string: Localization.TVShowTarget.Constant.baseURL) else {fatalError(Localization.TVShowTarget.fatalError)}
         return url
     }
     var parameters: [String: String] {
         switch self {
         case .loadTVShow:
-            return ["api_key": RequestConstant.apiKey.rawValue]
+            return [Localization.TVShowTarget.Dictionary.apikey: RequestConstant.apiKey.rawValue]
         case .fetchMore(page: let page):
-            return["api_key": RequestConstant.apiKey.rawValue, "page": page]
+            return[Localization.TVShowTarget.Dictionary.apikey: RequestConstant.apiKey.rawValue, Localization.TVShowTarget.Dictionary.page: page]
         }
     }
     var validationType: ValidationType {
         return .successCodes
     }
     var path: String {
-        return "tv/top_rated"
+        return Localization.TVShowTarget.path
     }
     var method: Moya.Method {
         return .get

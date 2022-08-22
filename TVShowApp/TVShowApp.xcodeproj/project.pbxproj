@@ -10,7 +10,6 @@
 		191E03402872ACB100B1BAB1 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191E033F2872ACB100B1BAB1 /* Carousel.swift */; };
 		19612E4D28725B7500465C88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E4C28725B7500465C88 /* AppDelegate.swift */; };
 		19612E4F28725B7500465C88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E4E28725B7500465C88 /* SceneDelegate.swift */; };
-		19612E5128725B7500465C88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E5028725B7500465C88 /* ViewController.swift */; };
 		19612E5628725B7600465C88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19612E5528725B7600465C88 /* Assets.xcassets */; };
 		19612E5928725B7600465C88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19612E5728725B7600465C88 /* LaunchScreen.storyboard */; };
 		19612E6328725C8B00465C88 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E6228725C8B00465C88 /* ViewConfiguration.swift */; };
@@ -20,12 +19,13 @@
 		19612E7328725D3700465C88 /* TVShowScenarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E6D28725D3700465C88 /* TVShowScenarios.swift */; };
 		19612E7428725D3700465C88 /* TVShowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E6E28725D3700465C88 /* TVShowPresenter.swift */; };
 		19612E7528725D3700465C88 /* TVShowWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E6F28725D3700465C88 /* TVShowWorker.swift */; };
-		19612E7628725D3700465C88 /* TVShowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E7028725D3700465C88 /* TVShowRouter.swift */; };
 		19612E7728725D3700465C88 /* TVShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E7128725D3700465C88 /* TVShowViewController.swift */; };
 		19612E7828725D3700465C88 /* TVShowInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E7228725D3700465C88 /* TVShowInteractor.swift */; };
 		19612E7B28725D9200465C88 /* TVShowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E7A28725D9200465C88 /* TVShowFactory.swift */; };
 		19612E7E2872680600465C88 /* TVShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E7D2872680600465C88 /* TVShowCell.swift */; };
 		19612E8028726CDB00465C88 /* TVCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E7F28726CDB00465C88 /* TVCollectionDataSource.swift */; };
+		1995F2FB28B32F67002A2E8F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1995F2FA28B32F67002A2E8F /* Localizable.strings */; };
+		1995F2FD28B33432002A2E8F /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1995F2FC28B33432002A2E8F /* Strings+Generated.swift */; };
 		19BC80252873E8C100EAA1DA /* UIView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BC80242873E8C100EAA1DA /* UIView+Gradient.swift */; };
 		19BC80272873FB2D00EAA1DA /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BC80262873FB2D00EAA1DA /* ShowView.swift */; };
 		1DDE9EA13C3B1949C0CEE116 /* Pods_TVShowApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706A1A56CC8D673D108B67EA /* Pods_TVShowApp.framework */; };
@@ -36,7 +36,6 @@
 		19612E4928725B7500465C88 /* TVShowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVShowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19612E4C28725B7500465C88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19612E4E28725B7500465C88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		19612E5028725B7500465C88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		19612E5528725B7600465C88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19612E5828725B7600465C88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19612E5A28725B7600465C88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,12 +46,13 @@
 		19612E6D28725D3700465C88 /* TVShowScenarios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowScenarios.swift; sourceTree = "<group>"; };
 		19612E6E28725D3700465C88 /* TVShowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowPresenter.swift; sourceTree = "<group>"; };
 		19612E6F28725D3700465C88 /* TVShowWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowWorker.swift; sourceTree = "<group>"; };
-		19612E7028725D3700465C88 /* TVShowRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowRouter.swift; sourceTree = "<group>"; };
 		19612E7128725D3700465C88 /* TVShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowViewController.swift; sourceTree = "<group>"; };
 		19612E7228725D3700465C88 /* TVShowInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowInteractor.swift; sourceTree = "<group>"; };
 		19612E7A28725D9200465C88 /* TVShowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowFactory.swift; sourceTree = "<group>"; };
 		19612E7D2872680600465C88 /* TVShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowCell.swift; sourceTree = "<group>"; };
 		19612E7F28726CDB00465C88 /* TVCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCollectionDataSource.swift; sourceTree = "<group>"; };
+		1995F2FA28B32F67002A2E8F /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		1995F2FC28B33432002A2E8F /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		19BC80242873E8C100EAA1DA /* UIView+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Gradient.swift"; sourceTree = "<group>"; };
 		19BC80262873FB2D00EAA1DA /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
 		706A1A56CC8D673D108B67EA /* Pods_TVShowApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVShowApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +72,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		193EB0AE28B32DC20083C099 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				1995F2FC28B33432002A2E8F /* Strings+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		19612E4028725B7500465C88 = {
 			isa = PBXGroup;
 			children = (
@@ -93,9 +101,10 @@
 		19612E4B28725B7500465C88 /* TVShowApp */ = {
 			isa = PBXGroup;
 			children = (
+				193EB0AE28B32DC20083C099 /* Generated */,
 				19612E6128725C8300465C88 /* Helpers */,
 				19612E6028725C0300465C88 /* Resources */,
-				19612E6628725CA500465C88 /* Repositories */,
+				19612E6628725CA500465C88 /* Service */,
 				19612E6928725CE900465C88 /* Models */,
 				19612E6C28725D1500465C88 /* Scene */,
 				19612E5A28725B7600465C88 /* Info.plist */,
@@ -110,7 +119,6 @@
 				19612E4E28725B7500465C88 /* SceneDelegate.swift */,
 				19612E5528725B7600465C88 /* Assets.xcassets */,
 				19612E5728725B7600465C88 /* LaunchScreen.storyboard */,
-				19612E5028725B7500465C88 /* ViewController.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -121,17 +129,18 @@
 				19612E6228725C8B00465C88 /* ViewConfiguration.swift */,
 				191E033F2872ACB100B1BAB1 /* Carousel.swift */,
 				19BC80242873E8C100EAA1DA /* UIView+Gradient.swift */,
+				1995F2FA28B32F67002A2E8F /* Localizable.strings */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		19612E6628725CA500465C88 /* Repositories */ = {
+		19612E6628725CA500465C88 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				19612E6428725CA200465C88 /* TVShowProvider.swift */,
 				19612E6728725CCF00465C88 /* TVShowTarget.swift */,
 			);
-			path = Repositories;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		19612E6928725CE900465C88 /* Models */ = {
@@ -150,7 +159,6 @@
 				19612E6D28725D3700465C88 /* TVShowScenarios.swift */,
 				19612E6E28725D3700465C88 /* TVShowPresenter.swift */,
 				19612E6F28725D3700465C88 /* TVShowWorker.swift */,
-				19612E7028725D3700465C88 /* TVShowRouter.swift */,
 				19612E7128725D3700465C88 /* TVShowViewController.swift */,
 				19612E7228725D3700465C88 /* TVShowInteractor.swift */,
 			);
@@ -201,6 +209,7 @@
 			buildPhases = (
 				10E0F18D27C63CE05C972388 /* [CP] Check Pods Manifest.lock */,
 				19E96A9328B1441E005999CE /* Run SwiftLint */,
+				191EADC628B3257400C67551 /* SwiftGen */,
 				19612E4528725B7500465C88 /* Sources */,
 				19612E4628725B7500465C88 /* Frameworks */,
 				19612E4728725B7500465C88 /* Resources */,
@@ -254,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19612E5928725B7600465C88 /* LaunchScreen.storyboard in Resources */,
+				1995F2FB28B32F67002A2E8F /* Localizable.strings in Resources */,
 				19612E5628725B7600465C88 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +292,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		191EADC628B3257400C67551 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
 		};
 		19E96A9328B1441E005999CE /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -328,17 +356,16 @@
 				19612E7828725D3700465C88 /* TVShowInteractor.swift in Sources */,
 				191E03402872ACB100B1BAB1 /* Carousel.swift in Sources */,
 				19612E7528725D3700465C88 /* TVShowWorker.swift in Sources */,
-				19612E5128725B7500465C88 /* ViewController.swift in Sources */,
 				19612E6528725CA200465C88 /* TVShowProvider.swift in Sources */,
 				19612E7328725D3700465C88 /* TVShowScenarios.swift in Sources */,
 				19612E6328725C8B00465C88 /* ViewConfiguration.swift in Sources */,
 				19612E4D28725B7500465C88 /* AppDelegate.swift in Sources */,
 				19612E4F28725B7500465C88 /* SceneDelegate.swift in Sources */,
 				19612E6B28725CF400465C88 /* TVShow.swift in Sources */,
+				1995F2FD28B33432002A2E8F /* Strings+Generated.swift in Sources */,
 				19BC80252873E8C100EAA1DA /* UIView+Gradient.swift in Sources */,
 				19612E6828725CCF00465C88 /* TVShowTarget.swift in Sources */,
 				19BC80272873FB2D00EAA1DA /* ShowView.swift in Sources */,
-				19612E7628725D3700465C88 /* TVShowRouter.swift in Sources */,
 				19612E8028726CDB00465C88 /* TVCollectionDataSource.swift in Sources */,
 				19612E7428725D3700465C88 /* TVShowPresenter.swift in Sources */,
 				19612E7728725D3700465C88 /* TVShowViewController.swift in Sources */,

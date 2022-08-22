@@ -13,7 +13,7 @@ protocol TVShowPresenterProtocol {
     func presentChangedTVShow(response: TVShowScenarios.Change.Response)
 }
 
-class TVShowPresenter: TVShowPresenterProtocol {
+final class TVShowPresenter: TVShowPresenterProtocol {
     weak var viewController: TVShowViewControllerProtocol?
     func presentTVShow(response: TVShowScenarios.Fetch.Response) {
         let viewModel = TVShowScenarios.Fetch.ViewModel(showsList: response.showsList)

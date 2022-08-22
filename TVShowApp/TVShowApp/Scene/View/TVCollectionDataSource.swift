@@ -62,9 +62,9 @@ extension TVCollectionDataSource: UICollectionViewDelegateFlowLayout {
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let screeWidth: CGFloat = UIScreen.main.bounds.width / 2 - 15
-        return CGSize(width: screeWidth, height: 1.5 * screeWidth)
-    }
+            let screeWidth: CGFloat = UIScreen.main.bounds.width / 2 - 15
+            return CGSize(width: screeWidth, height: 1.5 * screeWidth)
+        }
 }
 
 extension TVCollectionDataSource: UICollectionViewDelegate {
@@ -89,13 +89,13 @@ extension TVCollectionDataSource: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell: TVShowCell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: TVShowCell.identifier,
-            for: indexPath) as? TVShowCell
-        else { return UICollectionViewCell() }
-        let show = shows[indexPath.item]
-        guard let urlShow = show.posterURL else { return UICollectionViewCell() }
-        cell.setupCell(nameShow: show.name ?? "", urlPoster: urlShow)
-        return cell
-    }
+            guard let cell: TVShowCell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: TVShowCell.identifier,
+                for: indexPath) as? TVShowCell
+            else { return UICollectionViewCell() }
+            let show = shows[indexPath.item]
+            guard let urlShow = show.posterURL else { return UICollectionViewCell() }
+            cell.setupCell(nameShow: show.name ?? "", urlPoster: urlShow)
+            return cell
+        }
 }

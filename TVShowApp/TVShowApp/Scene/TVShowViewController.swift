@@ -36,17 +36,17 @@ final class TVShowViewController: UIViewController, TVShowViewControllerProtocol
         image.contentMode = .scaleToFill
         return image
     }()
-    let yearView: ShowView = {
+    private let yearView: ShowView = {
         let view = ShowView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    let voteAverageView: ShowView = {
+    private let voteAverageView: ShowView = {
         let view = ShowView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    lazy var stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [yearView, voteAverageView])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fillEqually
@@ -54,7 +54,7 @@ final class TVShowViewController: UIViewController, TVShowViewControllerProtocol
         stack.axis = .horizontal
         return stack
     }()
-    let showLabel: UILabel = {
+    private let showLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
@@ -62,7 +62,7 @@ final class TVShowViewController: UIViewController, TVShowViewControllerProtocol
         label.textAlignment = .center
         return label
     }()
-    let titleView: UILabel = {
+    private let titleView: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
@@ -70,16 +70,14 @@ final class TVShowViewController: UIViewController, TVShowViewControllerProtocol
         label.textAlignment = .center
         return label
     }()
-    let interactor: TVShowInteractorProtocol
-    let router: TVShowRouterProtocol
+    private let interactor: TVShowInteractorProtocol
     private lazy var dataSource = TVCollectionDataSource(collectionView: self.collectionView, delegate: self)
-    init(interactor: TVShowInteractor, router: TVShowRouterProtocol) {
+    init(interactor: TVShowInteractor) {
         self.interactor = interactor
-        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(Localization.Generic.fatalErrorNSCoder)
     }
     // MARK: View lifecycle
     override func viewDidLoad() {
@@ -87,7 +85,7 @@ final class TVShowViewController: UIViewController, TVShowViewControllerProtocol
         fetchShows()
         setUpView()
     }
-    func fetchShows() {
+    private func fetchShows() {
         let request = TVShowScenarios.Fetch.Request()
         interactor.fetchTVShows(request: request)
     }
@@ -150,6 +148,6 @@ extension TVShowViewController: ViewConfiguration {
     }
     func setUpAdditionalConfiguration() {
         backgroundImageView.addBlackGradientLayerInBackground(frame: view.bounds, colors: [.clear, .black])
-        titleView.text = "Popular • Serie"
+        titleView.text = Localization.TVShowViewController.titleView
     }
 }

@@ -1,0 +1,44 @@
+/* 
+  Localizable.strings
+  TVShowApp
+
+  Created by Giuliano Accorsi on 22/08/22.
+  
+*/
+
+
+// MARK: Generic
+
+"Generic.DefaultConfiguration" = "Default Configuration";
+"Generic.FatalErrorNSCoder" = "init(coder:) has not been implemented";
+
+//MARK: Service
+
+"TVShowTarget.Constant.baseURL" = "https://api.themoviedb.org/3/";
+"TVShowTarget.Constant.apiKey" = "e67ebe33d00c9960fe5c35b3e75a1b22";
+"TVShowTarget.FatalError" = "Failed to load baseURL";
+"TVShowTarget.Dictionary.apikey" = "api_key";
+"TVShowTarget.Dictionary.page" = "page";
+"TVShowTarget.path" = "tv/top_rated";
+
+//MARK: Models - ResultAPI
+
+"ResultModel.totalPages" = "total_pages";
+"ResultModel.totalResults" = "total_results";
+
+//MARK: Models - TVShow
+
+"TVShow.CodingKeys.posterPath" = "poster_path";
+"TVShow.CodingKeys.backdropPath" = "backdrop_path";
+"TVShow.CodingKeys.firstAirDate" = "first_air_date";
+"TVShow.CodingKeys.voteAverage" = "vote_average";
+"TVShow.URL.image" = "https://image.tmdb.org/t/p/w500/";
+"TVShow.NotFound" = "N/A";
+
+//MARK: TVShowViewController
+
+"TVShowViewController.TitleView" = "Popular • Serie";
+
+
+
+

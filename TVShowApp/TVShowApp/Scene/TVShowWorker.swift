@@ -8,8 +8,8 @@
 import UIKit
 import Moya
 
-class TVShowWorker {
-    let serviceProvider: TVShowProviderProtocol
+final class TVShowWorker {
+    private let serviceProvider: TVShowProviderProtocol
 
     init(serviceProvider: TVShowProviderProtocol = TVShowProvider(provider: MoyaProvider<TVShowTarget>())) {
         self.serviceProvider = serviceProvider

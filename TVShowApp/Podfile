@@ -8,5 +8,6 @@ target 'TVShowApp' do
   # Pods for TVShowApp
   pod 'Moya'
   pod 'Kingfisher'
+  pod 'SwiftGen', '~> 6.6.2'
 
 end

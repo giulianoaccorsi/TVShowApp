@@ -9,13 +9,11 @@ import UIKit
 
 enum TVShowFactory {
     static func make() -> TVShowViewController {
-        let interactor = TVShowInteractor()
-        let router = TVShowRouter()
-        let viewController = TVShowViewController(interactor: interactor, router: router)
+        let worker = TVShowWorker()
         let presenter = TVShowPresenter()
-        interactor.presenter = presenter
+        let interactor = TVShowInteractor(presenter: presenter, worker: worker)
+        let viewController = TVShowViewController(interactor: interactor)
         presenter.viewController = viewController
-        router.viewController = viewController
         return viewController
     }
 }

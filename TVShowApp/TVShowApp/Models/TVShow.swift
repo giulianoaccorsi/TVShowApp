@@ -12,7 +12,6 @@ struct ResultAPI: Codable {
     let page: Int?
     let results: [TVShow]?
     let totalPages, totalResults: Int?
-
     enum CodingKeys: String, CodingKey {
         case page, results
         case totalPages = "total_pages"
@@ -28,7 +27,6 @@ struct TVShow: Codable {
     let voteAverage: Double?
     let backdropPath: String?
     let firstAirDate: String?
-
     enum CodingKeys: String, CodingKey {
         case id, name
         case posterPath = "poster_path"
@@ -38,21 +36,21 @@ struct TVShow: Codable {
     }
     var posterURL: URL? {
         if let urlString = posterPath,
-        let url = URL(string: "https://image.tmdb.org/t/p/w500/\(urlString)") {
+        let url = URL(string: "\(Localization.TVShow.Url.image)\(urlString)") {
             return url
         }
         return nil
     }
     var backdropURL: URL? {
         if let urlString = backdropPath,
-        let url = URL(string: "https://image.tmdb.org/t/p/w500/\(urlString)") {
+        let url = URL(string: "\(Localization.TVShow.Url.image)\(urlString)") {
             return url
         }
         return nil
     }
     var voteAverageString: String {
         guard let voteAverage = self.voteAverage else {
-            return "N/A"
+            return Localization.TVShow.notFound
         }
         return "\(voteAverage)"
     }
@@ -60,6 +58,6 @@ struct TVShow: Codable {
         if let firstAirDate = self.firstAirDate {
             return String(firstAirDate.prefix(4))
         }
-        return "N/A"
+        return Localization.TVShow.notFound
     }
 }

@@ -12,15 +12,15 @@ enum ShowViewType {
     case vote
 }
 
-class ShowView: UIView {
-    let viewBackground: UIView = {
+final class ShowView: UIView {
+    private let viewBackground: UIView = {
         let image = UIView(frame: .zero)
         image.translatesAutoresizingMaskIntoConstraints = false
         image.layer.cornerRadius = 10
         image.backgroundColor = .black
         return image
     }()
-    let showLabel: UILabel = {
+    private let showLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .yellow
@@ -45,7 +45,7 @@ class ShowView: UIView {
     }
     @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(Localization.Generic.fatalErrorNSCoder)
     }
 }
 
