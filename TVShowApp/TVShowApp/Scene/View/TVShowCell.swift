@@ -21,19 +21,19 @@ final class TVShowCell: UICollectionViewCell {
         title.numberOfLines = 0
         title.textAlignment = .center
         title.font = UIFont.boldSystemFont(ofSize: 17)
-        title.textColor = .white
+        title.textColor = Colors.titleLabel.color
         return title
     }()
     private let blackView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.clear
+        view.backgroundColor = Colors.clear.color
         return view
     }()
     private let viewBackground: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        view.backgroundColor = Colors.cellBackground.color
         view.layer.cornerRadius = 20
         view.clipsToBounds = true
         return view

@@ -18,7 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = viewController
-        window?.overrideUserInterfaceStyle = .light
         window?.makeKeyAndVisible()
     }
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -17,13 +17,11 @@ final class ShowView: UIView {
         let image = UIView(frame: .zero)
         image.translatesAutoresizingMaskIntoConstraints = false
         image.layer.cornerRadius = 10
-        image.backgroundColor = .black
         return image
     }()
     private let showLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .yellow
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textAlignment = .center
         return label
@@ -36,11 +34,12 @@ final class ShowView: UIView {
         self.showLabel.text = text
         switch type {
         case .year:
-            showLabel.textColor = .white
-            viewBackground.backgroundColor = .black.withAlphaComponent(0.8)
+            showLabel.textColor = Colors.yearLabel.color
+            // Opacity viewBackground - 0.8
+            viewBackground.backgroundColor = Colors.backgroundViewYear.color
         case .vote:
-            viewBackground.backgroundColor = UIColor(red: 1.0, green: 0.8, blue: 0.008, alpha: 1.0)
-            showLabel.textColor = .black
+            viewBackground.backgroundColor = Colors.backgroundViewVote.color
+            showLabel.textColor = Colors.voteLabel.color
         }
     }
     @available(*, unavailable)

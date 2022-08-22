@@ -57,7 +57,7 @@ final class TVShowViewController: UIViewController, TVShowViewControllerProtocol
     private let showLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white
+        label.textColor = Colors.titleLabel.color
         label.font = UIFont.boldSystemFont(ofSize: 30)
         label.textAlignment = .center
         return label
@@ -65,7 +65,7 @@ final class TVShowViewController: UIViewController, TVShowViewControllerProtocol
     private let titleView: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white
+        label.textColor = Colors.titleLabel.color
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textAlignment = .center
         return label
@@ -147,7 +147,7 @@ extension TVShowViewController: ViewConfiguration {
         ])
     }
     func setUpAdditionalConfiguration() {
-        backgroundImageView.addBlackGradientLayerInBackground(frame: view.bounds, colors: [.clear, .black])
+        backgroundImageView.addBlackGradientLayerInBackground(frame: view.bounds, colors: [Colors.clear.color, .black])
         titleView.text = Localization.TVShowViewController.titleView
     }
 }

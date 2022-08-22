@@ -24,6 +24,7 @@
 		19612E7B28725D9200465C88 /* TVShowFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E7A28725D9200465C88 /* TVShowFactory.swift */; };
 		19612E7E2872680600465C88 /* TVShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E7D2872680600465C88 /* TVShowCell.swift */; };
 		19612E8028726CDB00465C88 /* TVCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19612E7F28726CDB00465C88 /* TVCollectionDataSource.swift */; };
+		1974B55428B3BC0200348D9C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974B55328B3BC0200348D9C /* Colors.swift */; };
 		1995F2FB28B32F67002A2E8F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1995F2FA28B32F67002A2E8F /* Localizable.strings */; };
 		1995F2FD28B33432002A2E8F /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1995F2FC28B33432002A2E8F /* Strings+Generated.swift */; };
 		19BC80252873E8C100EAA1DA /* UIView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BC80242873E8C100EAA1DA /* UIView+Gradient.swift */; };
@@ -51,6 +52,7 @@
 		19612E7A28725D9200465C88 /* TVShowFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowFactory.swift; sourceTree = "<group>"; };
 		19612E7D2872680600465C88 /* TVShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowCell.swift; sourceTree = "<group>"; };
 		19612E7F28726CDB00465C88 /* TVCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCollectionDataSource.swift; sourceTree = "<group>"; };
+		1974B55328B3BC0200348D9C /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1995F2FA28B32F67002A2E8F /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		1995F2FC28B33432002A2E8F /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		19BC80242873E8C100EAA1DA /* UIView+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Gradient.swift"; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				1995F2FC28B33432002A2E8F /* Strings+Generated.swift */,
+				1974B55328B3BC0200348D9C /* Colors.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				1995F2FD28B33432002A2E8F /* Strings+Generated.swift in Sources */,
 				19BC80252873E8C100EAA1DA /* UIView+Gradient.swift in Sources */,
 				19612E6828725CCF00465C88 /* TVShowTarget.swift in Sources */,
+				1974B55428B3BC0200348D9C /* Colors.swift in Sources */,
 				19BC80272873FB2D00EAA1DA /* ShowView.swift in Sources */,
 				19612E8028726CDB00465C88 /* TVCollectionDataSource.swift in Sources */,
 				19612E7428725D3700465C88 /* TVShowPresenter.swift in Sources */,
