@@ -8,12 +8,6 @@
 import Foundation
 import Moya
 
-enum RequestConstant: String {
-    case baseURL = "https://api.themoviedb.org/3/"
-    case apiKey = "e67ebe33d00c9960fe5c35b3e75a1b22"
-}
-
-// Each enum case is a different API request
 enum TVShowTarget {
     case loadTVShow
     case fetchMore(page: String)
@@ -21,15 +15,20 @@ enum TVShowTarget {
 
 extension TVShowTarget: TargetType {
     var baseURL: URL {
-        guard let url = URL(string: Localization.TVShowTarget.Constant.baseURL) else {fatalError(Localization.TVShowTarget.fatalError)}
+        guard let url = URL(string: Localization.TVShowTarget.Constant.baseURL) else {
+            fatalError(Localization.TVShowTarget.fatalError)
+        }
         return url
     }
     var parameters: [String: String] {
         switch self {
         case .loadTVShow:
-            return [Localization.TVShowTarget.Dictionary.apikey: RequestConstant.apiKey.rawValue]
+            return [Localization.TVShowTarget.Dictionary.apikey: Localization.TVShowTarget.Constant.apiKey]
         case .fetchMore(page: let page):
-            return[Localization.TVShowTarget.Dictionary.apikey: RequestConstant.apiKey.rawValue, Localization.TVShowTarget.Dictionary.page: page]
+            return [
+                Localization.TVShowTarget.Dictionary.apikey: Localization.TVShowTarget.Constant.apiKey,
+                    Localization.TVShowTarget.Dictionary.page: page
+            ]
         }
     }
     var validationType: ValidationType {

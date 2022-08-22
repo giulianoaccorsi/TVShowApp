@@ -45,12 +45,12 @@ final class TVCollectionDataSource: NSObject {
             self.selectedIndex = index
         }
     }
-    func isSelected(index: Int) {
+    private func isSelected(index: Int) {
         if let cell = collectionView?.cellForItem(at: IndexPath(row: index, section: 0)) as? TVShowCell {
             cell.isSelectedCell()
         }
     }
-    func isNOTSelected(index: Int) {
+    private func isNOTSelected(index: Int) {
         if let cell = collectionView?.cellForItem(at: IndexPath(row: index, section: 0)) as? TVShowCell {
             cell.isNotSelectedCell()
         }
