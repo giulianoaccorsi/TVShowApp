@@ -1,10 +1,20 @@
 # TVShow App
 
-An app that show the most popular TVShow. Developed for study only, using Moya and PromiseKIT.
+An app that show the most popular TVShow. Developed for study only
+
+
 
 **API**:  [TMDB](https://www.themoviedb.org/)
 
 **Based on**: [Dribbble](https://dribbble.com/shots/10556530-Movie-TV-Film-Landing-Page-Design)
+
+## Features
+
+* Clean Swift Architecture (VIP)
+* Infinity Scroll
+* View Code (UIKit)
+* Dark Mode
+* Internationalization (English and PT-Br)
 
 
 
@@ -13,6 +23,7 @@ An app that show the most popular TVShow. Developed for study only, using Moya a
  - [Moya](https://https://github.com/Moya/Moya)
  - [SwiftLint](https://github.com/realm/SwiftLint)
  - [Kingfisher](https://github.com/onevcat/Kingfisher)
+ - [SwiftGen](https://github.com/SwiftGen/SwiftGen)
 
 
 ## Reference 📖 

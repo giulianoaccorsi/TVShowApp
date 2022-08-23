@@ -1,13 +1,20 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+source 'https://cdn.cocoapods.org/'
+
+platform :ios, '15.0'
+inhibit_all_warnings!
+
 
 target 'TVShowApp' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
-  # Pods for TVShowApp
-  pod 'Moya'
-  pod 'Kingfisher'
+  pod 'Moya', '~> 15.0.0'
+  pod 'Kingfisher', '~> 7.3.2'
   pod 'SwiftGen', '~> 6.6.2'
-
 end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+   target.build_configurations.each do |config|
+    config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+   end
+  end
+ end

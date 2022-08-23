@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1340"
-   version = "1.3">
+   LastUpgradeVersion = "1341"
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "YES">
+      buildImplicitDependencies = "YES"
+      runPostActionsOnFailure = "NO">
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -14,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "19612E4828725B7500465C88"
+               BlueprintIdentifier = "461A76C439CF5C38B2977ED0"
                BuildableName = "TVShowApp.app"
                BlueprintName = "TVShowApp"
                ReferencedContainer = "container:TVShowApp.xcodeproj">
@@ -26,9 +27,42 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "027BDF18A0B7E9CA6865CA51"
+               BuildableName = "TVShowAppTests.xctest"
+               BlueprintName = "TVShowAppTests"
+               ReferencedContainer = "container:TVShowApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "461A76C439CF5C38B2977ED0"
+            BuildableName = "TVShowApp.app"
+            BlueprintName = "TVShowApp"
+            ReferencedContainer = "container:TVShowApp.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <CommandLineArguments>
+      </CommandLineArguments>
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "461A76C439CF5C38B2977ED0"
+            BuildableName = "TVShowApp.app"
+            BlueprintName = "TVShowApp"
+            ReferencedContainer = "container:TVShowApp.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -44,12 +78,14 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "19612E4828725B7500465C88"
+            BlueprintIdentifier = "461A76C439CF5C38B2977ED0"
             BuildableName = "TVShowApp.app"
             BlueprintName = "TVShowApp"
             ReferencedContainer = "container:TVShowApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -61,12 +97,14 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "19612E4828725B7500465C88"
+            BlueprintIdentifier = "461A76C439CF5C38B2977ED0"
             BuildableName = "TVShowApp.app"
             BlueprintName = "TVShowApp"
             ReferencedContainer = "container:TVShowApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+      </CommandLineArguments>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

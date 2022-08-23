@@ -19,6 +19,7 @@ final class ShowView: UIView {
         image.layer.cornerRadius = 10
         return image
     }()
+
     private let showLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -26,22 +27,24 @@ final class ShowView: UIView {
         label.textAlignment = .center
         return label
     }()
+
     init() {
         super.init(frame: .zero)
         setUpView()
     }
+
     func setupViewBackground(text: String, type: ShowViewType) {
         self.showLabel.text = text
         switch type {
         case .year:
             showLabel.textColor = Colors.yearLabel.color
-            // Opacity viewBackground - 0.8
             viewBackground.backgroundColor = Colors.backgroundViewYear.color
         case .vote:
             viewBackground.backgroundColor = Colors.backgroundViewVote.color
             showLabel.textColor = Colors.voteLabel.color
         }
     }
+
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError(Localization.Generic.fatalErrorNSCoder)
@@ -53,6 +56,7 @@ extension ShowView: ViewConfiguration {
         self.addSubview(viewBackground)
         viewBackground.addSubview(showLabel)
     }
+
     func setUpConstraints() {
         NSLayoutConstraint.activate([
             viewBackground.topAnchor.constraint(equalTo: self.topAnchor),
@@ -65,6 +69,7 @@ extension ShowView: ViewConfiguration {
             showLabel.trailingAnchor.constraint(equalTo: viewBackground.trailingAnchor)
         ])
     }
+
     func setUpAdditionalConfiguration() {
     }
 }

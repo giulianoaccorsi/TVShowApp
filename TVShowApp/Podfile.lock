@@ -1,6 +1,6 @@
 PODS:
-  - Alamofire (5.6.1)
-  - Kingfisher (7.2.4)
+  - Alamofire (5.6.2)
+  - Kingfisher (7.3.2)
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
@@ -8,8 +8,8 @@ PODS:
   - SwiftGen (6.6.2)
 
 DEPENDENCIES:
-  - Kingfisher
-  - Moya
+  - Kingfisher (~> 7.3.2)
+  - Moya (~> 15.0.0)
   - SwiftGen (~> 6.6.2)
 
 SPEC REPOS:
@@ -20,11 +20,11 @@ SPEC REPOS:
     - SwiftGen
 
 SPEC CHECKSUMS:
-  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
-  Kingfisher: 2457be2121734e69e54a2312ecc0150eb9ae70b3
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
 
-PODFILE CHECKSUM: e363a2d3b18eb07fd37802c552f357ea4786273e
+PODFILE CHECKSUM: 083ecdf18d6e6bb7e17699ab82ccd6287c7d03a4
 
 COCOAPODS: 1.11.3

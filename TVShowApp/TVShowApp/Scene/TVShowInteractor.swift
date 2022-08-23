@@ -17,10 +17,12 @@ final class TVShowInteractor: TVShowInteractorProtocol {
     private var pageIndex: Int = 1
     private let worker: TVShowWorker
     private var tvShows: [TVShow] = []
+
     init(presenter: TVShowPresenterProtocol, worker: TVShowWorker) {
         self.presenter = presenter
         self.worker = worker
     }
+
     func fetchTVShows(request: TVShowScenarios.Fetch.Request) {
         let pageString = String(pageIndex)
         worker.getTVShows(page: pageString) { [weak self] result in
@@ -38,6 +40,7 @@ final class TVShowInteractor: TVShowInteractorProtocol {
             }
         }
     }
+
     func changedItem(request: TVShowScenarios.Change.Request) {
         let response = TVShowScenarios.Change.Response(tvShow: request.tvShow)
         self.presenter.presentChangedTVShow(response: response)

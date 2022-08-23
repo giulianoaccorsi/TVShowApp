@@ -17,6 +17,7 @@ final class TVCollectionDataSource: NSObject {
     private let delegate: TVCollectionDataSourceDelegate
     private var shows: [TVShow] = []
     private var selectedIndex: Int = 0
+
     init(collectionView: UICollectionView, delegate: TVCollectionDataSourceDelegate) {
         self.delegate = delegate
         super.init()
@@ -24,17 +25,21 @@ final class TVCollectionDataSource: NSObject {
         registerCells()
         setupDataSource()
     }
+
     private func registerCells() {
         collectionView?.register(TVShowCell.self, forCellWithReuseIdentifier: TVShowCell.identifier)
     }
+
     private func setupDataSource() {
         collectionView?.dataSource = self
         collectionView?.delegate = self
     }
+
     func updateShows(tvShows: [TVShow]) {
         self.shows = tvShows
         collectionView?.reloadData()
     }
+
     func changeItemSelected(index: Int) {
         if selectedIndex == index {
             return
@@ -45,11 +50,13 @@ final class TVCollectionDataSource: NSObject {
             self.selectedIndex = index
         }
     }
+
     private func isSelected(index: Int) {
         if let cell = collectionView?.cellForItem(at: IndexPath(row: index, section: 0)) as? TVShowCell {
             cell.isSelectedCell()
         }
     }
+
     private func isNOTSelected(index: Int) {
         if let cell = collectionView?.cellForItem(at: IndexPath(row: index, section: 0)) as? TVShowCell {
             cell.isNotSelectedCell()
@@ -86,6 +93,7 @@ extension TVCollectionDataSource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return shows.count
     }
+
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

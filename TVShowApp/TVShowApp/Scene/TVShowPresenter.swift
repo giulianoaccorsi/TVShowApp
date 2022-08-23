@@ -15,14 +15,17 @@ protocol TVShowPresenterProtocol {
 
 final class TVShowPresenter: TVShowPresenterProtocol {
     weak var viewController: TVShowViewControllerProtocol?
+
     func presentTVShow(response: TVShowScenarios.Fetch.Response) {
         let viewModel = TVShowScenarios.Fetch.ViewModel(showsList: response.showsList)
         viewController?.displayTVShows(viewModel: viewModel)
     }
+
     func presentError(response: TVShowScenarios.Error.Response) {
         let viewModel = TVShowScenarios.Error.ViewModel()
         viewController?.displayError(viewModel: viewModel)
     }
+
     func presentChangedTVShow(response: TVShowScenarios.Change.Response) {
         let backgroundURL = response.tvShow.posterURL
         let year = response.tvShow.date
