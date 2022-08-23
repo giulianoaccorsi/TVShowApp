@@ -55,6 +55,19 @@ targets:
       CODE_SIGN_STYLE: "Manual"
       DEVELOPMENT_TEAM: ""
       PROVISIONING_PROFILE: "Wildcard"
+
+    info:
+      path: TVShowApp/Info.plist
+      properties:
+        UISupportedInterfaceOrientations: []
+        NSAppTransportSecurity: true
+        UILaunchStoryboardName: LaunchScreen
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
   
   TVShowAppTests:
     platform: iOS
