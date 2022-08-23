@@ -16,19 +16,19 @@ An app that show the most popular TVShow. Developed for study only
 * Dark Mode
 * Internationalization (English and PT-Br)
 
+### Prerequisites
 
+* [Xcode](https://developer.apple.com/xcode/) 13.4.1
+* [xcodegen](https://github.com/yonaskolb/XcodeGen) 2.32.0
+* [Cocoapods](https://cocoapods.org) 1.11.3
 
-## CocoaPods 📚
+## Built With 📚
 
- - [Moya](https://https://github.com/Moya/Moya)
- - [SwiftLint](https://github.com/realm/SwiftLint)
- - [Kingfisher](https://github.com/onevcat/Kingfisher)
- - [SwiftGen](https://github.com/SwiftGen/SwiftGen)
-
-
-## Reference 📖 
-
-- [Clean Swift Architecture](https://clean-swift.com/)
+ - [Moya](https://https://github.com/Moya/Moya) - So the basic idea of Moya is that we want some network abstraction layer that sufficiently encapsulates actually calling Alamofire directly. It should be simple enough that common things are easy, but comprehensive enough that complicated things are also easy.
+ - [SwiftLint](https://github.com/realm/SwiftLint) - A tool to enforce Swift style and conventions. SwiftLint enforces the style guide rules that are generally accepted by the Swift community. These rules are well described in popular style guides like
+ - [Kingfisher](https://github.com/onevcat/Kingfisher) - Kingfisher is a powerful, pure-Swift library for downloading and caching images from the web. 
+ - [SwiftGen](https://github.com/SwiftGen/SwiftGen) - SwiftGen is a tool to automatically generate Swift code for resources of your projects (like images, localised strings, etc), to make them type-safe to use.
+ - [XcodeGen](https://github.com/yonaskolb/XcodeGen) - XcodeGen is a command line tool written in Swift that generates your Xcode project using your folder structure and a project spec.
 
 ## Installing
 First of all download and install Xcode, Cocoapods and xcodegen, then clone the repository
