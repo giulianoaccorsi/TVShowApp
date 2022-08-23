@@ -7,26 +7,29 @@
 name: TVShowApp
 
 # Configuracoes de compilacao
-settings:
+settings: 
   MARKETING_VERSION: "1.0.0"
   SWIFT_VERSION: 5.0
   VERSIONING_SYSTEM: "apple-generic"
   CODE_SIGN_IDENTITY: "iPhone Developer"
   ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: "YES"
   ARCHS: $(ARCHS_STANDARD)
-  
+
 options:
   bundleIdPrefix: com.giulianoaccorsi
-  xcodeVersion: 13.4.1
+  xcodeVersion: "13.4.1" # Versao de compilacao do nosso app
   deploymentTarget:
-    iOS: 15.0
+    iOS: "15.0" # Base target do nosso app
 
-targets:
+# definicao do target do projeto e testes
+targets: 
   TVShowApp:
-    type: application
     platform: iOS
+    type: application
+
     sources:
-      - TVShowApp
+      - path: TVShowApp
+    
     preBuildScripts:
       - script: |
                 if [[ -f "${PODS_ROOT}/SwiftGen/bin/swiftgen" ]]; then
@@ -35,6 +38,7 @@ targets:
                   echo "warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it."
                 fi
         name: SwiftGen
+
     postCompileScripts:
     - script: |
               export PATH="$PATH:/opt/homebrew/bin"
@@ -44,40 +48,38 @@ targets:
                 echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
               fi
       name: Swiftlint
-    scheme:
-      testTargets:
-      - name: TVShowAppTests
-        randomExecutionOrder: true
-      gatherCoverageData: true
-      coverageTargets:
-        - TVShowApp
-    settings:
-      configs:
-        Debug:
-          ONLY_ACTIVE_ARCH: YES
-    info:
-      path: TVShowApp/Info.plist
-      properties:
-        UISupportedInterfaceOrientations: []
-        NSAppTransportSecurity: true
-        UILaunchStoryboardName: LaunchScreen
-        UIApplicationSceneManifest:
-          UIApplicationSupportsMultipleScenes: false
-          UISceneConfigurations:
-            UIWindowSceneSessionRoleApplication:
-              - UISceneConfigurationName: Default Configuration
-                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
 
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.giulianoaccorsi.TVShowApp
+      INFOPLIST_FILE: TVShowApp/Info.plist
+      CODE_SIGN_STYLE: "Manual"
+      DEVELOPMENT_TEAM: ""
+      PROVISIONING_PROFILE: "Wildcard"
+  
   TVShowAppTests:
-    type: bundle.unit-test
     platform: iOS
+    type: bundle.unit-test
+
     sources:
       - path: TVShowAppTests
-        includes:
-          - "**/*.swift"
+  
+    dependencies:
+      - target: TVShowApp
 
-    settings:
-      TEST_HOST: "$(BUILT_PRODUCTS_DIR)/TVShowApp.app/TVShowApp"
-
-    info:
-      path: TVShowAppTests/Info.plist
+#  definicao do scheme do projeto
+schemes:
+  TVShowApp:
+    build:
+      targets:
+        TVShowApp: [run, test]
+      parallelizeBuild: true
+      buildImplicitDependencies: true
+    run:
+      config: Debug
+    test: 
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets: 
+        - TVShowApp
+      targets:
+        - TVShowAppTests
