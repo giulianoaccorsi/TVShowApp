@@ -30,6 +30,18 @@ An app that show the most popular TVShow. Developed for study only
 
 - [Clean Swift Architecture](https://clean-swift.com/)
 
+## Installing
+First of all download and install Xcode, Cocoapods and xcodegen, then clone the repository
+```
+https://github.com/giulianoaccorsi/TVShowApp.git
+```
+
+Go to cloned directory and execute
+
+```
+xcodegen generate && pod install && open TVShowApp.xcworkspace
+```
+
 ## Demo 
 
 <img src= "https://user-images.githubusercontent.com/45433850/177260309-8e6451be-2fca-444d-9be0-1b93c3b454ae.gif" width="375" height="812">
