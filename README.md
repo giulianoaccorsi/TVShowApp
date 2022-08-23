@@ -39,7 +39,7 @@ https://github.com/giulianoaccorsi/TVShowApp.git
 Go to cloned directory and execute
 
 ```
-xcodegen generate && pod install && open TVShowApp.xcworkspace
+xcodegen generate
 ```
 
 ## Demo 

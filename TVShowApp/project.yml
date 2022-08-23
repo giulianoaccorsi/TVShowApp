@@ -16,6 +16,7 @@ settings:
   ARCHS: $(ARCHS_STANDARD)
 
 options:
+  postGenCommand: sh pod_install.sh
   bundleIdPrefix: com.giulianoaccorsi
   xcodeVersion: "13.4.1" # Versao de compilacao do nosso app
   deploymentTarget:
